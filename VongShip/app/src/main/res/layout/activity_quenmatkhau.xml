@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dangnhap">
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logo"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_below="@id/logoImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đặt liền tay - giao hàng ngay"
+        android:textSize="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:textColor="#05749F"
+        android:fontFamily="serif"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/forgotpassTv"
+        android:layout_below="@id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Đặt lại mật khẩu"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/TitleTv"
+        android:layout_below="@id/forgotpassTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nhập Email hoặc tên người dùng:"
+        android:textSize="18dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#5E5E5E"
+        android:fontFamily="serif"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/nameEt"
+        android:layout_below="@+id/TitleTv"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:textColorHint="#64BCF6"
+        android:textStyle="italic"
+        />
+
+    <Button
+        android:layout_below="@id/nameEt"
+        android:id="@+id/dangnhap"
+        android:layout_width="300dp"
+        android:layout_marginTop="150dp"
+        android:layout_height="60dp"
+        android:text="Đặt lại mật khẩu"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#ffff"
+        android:background="@drawable/buttondangnhap" />
+
+</RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackGround"
-    tools:context=".ProfileActivity">
+    tools:context=".Profile">
     <LinearLayout
         android:background="#FFFFFF"
         android:id="@+id/topPanel"
@@ -94,12 +94,12 @@
             android:id="@+id/listView"/>
     </RelativeLayout>
     <TextView
-        android:background="#FFFFFF"
+        android:background="#fff"
         android:paddingLeft="10dp"
         android:drawableLeft="@drawable/ic_version"
-        android:layout_marginBottom="10dp"
+
         android:gravity="center_vertical"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="false"
         android:layout_below="@id/listOption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

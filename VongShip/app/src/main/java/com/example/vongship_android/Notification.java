@@ -1,9 +1,5 @@
 package com.example.vongship_android;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +10,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Notifications extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+public class Notification extends Fragment {
     ListView listView;
     String mTitle[] = {"Chiều rồi!Trà sữa nào bạn ơi! Đồng giá 17K, freeship nữa nà",
             "Sáng nay ăn gì, cứ lên Loship, đặt ngay thôi nào, đồng giá 10K lại free ship tận nhà",
@@ -26,14 +26,15 @@ public class Notifications extends AppCompatActivity {
             "Tuy vô lý hết sức nhưng TẶNG mã LAMQUEN là điều không thể ngờ. Giảm 20.000đ cho đơn hàng đầu tiên nhé! Lại còn được Freeship nữa!"};
     String mDescription[]={"4 phút","15 phút","18 phút","1 giờ","19 giờ","23 giờ","1 ngày","1 ngày"};
     int images[] ={R.drawable.trsua,R.drawable.ansang,R.drawable.icon_loship,R.drawable.avatar_meo,R.drawable.douong,R.drawable.icon_loship,R.drawable.icon_loship,R.drawable.icon_loship};
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.ListView);
-        MyAdapter adapter = new MyAdapter( this, mTitle,mDescription,images);
+
+
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_notifications,container,false);
+        listView = root.findViewById(R.id.ListView);
+        Notification.MyAdapter adapter = new Notification.MyAdapter( getActivity(), mTitle,mDescription,images);
         listView.setAdapter(adapter);
-    }
+        return root;
+        };
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
         String rTitle[];
@@ -49,7 +50,7 @@ public class Notifications extends AppCompatActivity {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
-            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.row_notifications,parent, false);
             ImageView images= row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.text);

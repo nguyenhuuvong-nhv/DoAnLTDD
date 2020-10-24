@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.home:
                             selectedFragment = new home();
                             break;
-//                        case R.id.nofi:
-//                            selectedFragment = new activity_bookmark();
-//                            break;
+                        case R.id.nofi:
+                            selectedFragment = new Notification();
+                            break;
                         case R.id.profile:
                             selectedFragment = new Profile();
                             break;

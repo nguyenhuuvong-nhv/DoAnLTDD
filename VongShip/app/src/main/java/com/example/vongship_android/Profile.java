@@ -27,6 +27,7 @@ public class Profile extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.activity_profile,container,false);listView = root.findViewById(R.id.listView);
+
         Profile.Adapter adapter = new Profile.Adapter(getActivity(), imgIcon, mTitle, imgForward);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

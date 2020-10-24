@@ -108,6 +108,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:background="#fff"
         android:orientation="vertical"
         android:weightSum="2">
 
@@ -122,7 +123,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                app:cardElevation="0dp"
+                android:background="#FFFFFF"
+                android:outlineAmbientShadowColor="#fff"
+                android:backgroundTint="#FFFFFF">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -146,22 +151,26 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -174,25 +183,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                app:cardElevation="0dp" />
         </LinearLayout>
     </LinearLayout>
 

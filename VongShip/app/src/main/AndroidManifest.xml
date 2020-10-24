@@ -12,8 +12,8 @@
         <activity android:name=".quenmatkhau"></activity>
         <activity android:name=".dangki" />
         <activity android:name=".dangnhap" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".manhinhdautien">
+        <activity android:name=".manhinhdautien" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

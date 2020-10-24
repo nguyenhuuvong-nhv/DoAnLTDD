@@ -72,25 +72,25 @@
         android:weightSum="3"
         android:layout_centerHorizontal="true"
         >
+
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/zalo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            />
+            android:src="@drawable/zalo" />
+
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/gg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
-            />
+            android:src="@drawable/gg" />
+
         <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="top"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/fb"
             android:layout_weight="1"
-            />
+            android:src="@drawable/fb" />
 
     </LinearLayout>
 

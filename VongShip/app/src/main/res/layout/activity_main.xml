@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+    <androidx.appcompat.widget.Toolbar
+        app:contentInsetLeft="150dp"
+        app:contentInsetStart="150dp"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff"/>
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
@@ -19,6 +27,7 @@
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

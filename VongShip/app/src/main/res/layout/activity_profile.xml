@@ -88,10 +88,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/recommend"
         android:layout_marginTop="10dp">
+
         <ListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="435dp"
-            android:id="@+id/listView"/>
+            android:layout_height="435dp" />
     </RelativeLayout>
     <TextView
         android:background="#fff"

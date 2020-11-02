@@ -7,7 +7,9 @@
         <menu>
             <item android:title="Chọn ngôn ngữ"/>
             <item android:title="Hợp tác"/>
-            <item android:title="Đăng xuất"/>
+            <item
+                android:id="@+id/Menulogout"
+                android:title="Đăng xuất"/>
         </menu>
     </item>
 

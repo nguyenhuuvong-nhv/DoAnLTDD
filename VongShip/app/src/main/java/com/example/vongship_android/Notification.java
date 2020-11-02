@@ -49,6 +49,7 @@ public class Notification extends Fragment {
         }
         @NonNull
         @Override
+
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
             LayoutInflater layoutInflater = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.row_notifications,parent, false);

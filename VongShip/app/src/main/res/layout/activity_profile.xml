@@ -92,18 +92,19 @@
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
-            android:layout_height="435dp" />
+            android:layout_height="460dp" />
     </RelativeLayout>
+
     <TextView
-        android:background="#fff"
-        android:paddingLeft="17dp"
-        android:drawableLeft="@drawable/ic_version"
-        android:gravity="center_vertical"
-        android:layout_alignParentBottom="false"
-        android:layout_below="@id/listOption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/listOption"
+        android:layout_alignParentBottom="false"
+        android:background="#fff"
+        android:drawableLeft="@drawable/ic_version"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
         android:text="   Phiên bản hiện tại 2.17.7"
-        android:textSize="20dp"
-        android:textColor="#000000"/>
+        android:textColor="#000000"
+        android:textSize="20dp" />
 </RelativeLayout>

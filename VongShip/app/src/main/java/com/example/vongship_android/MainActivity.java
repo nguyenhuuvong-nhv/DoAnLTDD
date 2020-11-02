@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.drawable.abc);    //Icon muốn hiện thị
+        actionBar.setLogo(R.drawable.abc);    //Icon muốn hiện thị trên action bar
         actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setTitle("");
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener(){
@@ -56,8 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
     public boolean onCreateOptionsMenu(Menu menu) {
-        // khởi tạo menu từ file my_menu trong thư mục res/menu
+        // khởi tạo menu từ file menu_option trong thư mục res/menu
         getMenuInflater().inflate(R.menu.menu_option, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Menulogout:
+                Intent intent = new Intent(this, dangnhap.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

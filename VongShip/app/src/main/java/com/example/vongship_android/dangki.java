@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,8 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class dangki extends AppCompatActivity {
     private TextView tvgoidangnhap;
-
-    private EditText inputEmail, inputPassword;
+    private CheckBox cp_policy;
+    private EditText inputEmail, inputPassword, confirmPass;
     private Button btSignUp;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -34,7 +35,9 @@ public class dangki extends AppCompatActivity {
         btSignUp = (Button) findViewById(R.id.bt_dangki);
         inputEmail = (EditText) findViewById(R.id.user_Signup);
         inputPassword = (EditText) findViewById(R.id.pass_Signup);
+        confirmPass =(EditText) findViewById(R.id.confirmTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        cp_policy = (CheckBox) findViewById(R.id.cp_policy);
         auth = FirebaseAuth.getInstance();
 
 
@@ -53,6 +56,7 @@ public class dangki extends AppCompatActivity {
 
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                String confirm = confirmPass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Email không được trống!", Toast.LENGTH_SHORT).show();
@@ -66,6 +70,14 @@ public class dangki extends AppCompatActivity {
 
                 if (password.length() < 6) {
                     Toast.makeText(getApplicationContext(), "Mật khẩu quá ngắn, trên 6 kí tự!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (password.equals(confirm)==false) {
+                    Toast.makeText(getApplicationContext(), "Mật khẩu nhập không khớp!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (cp_policy.isChecked()==false){
+                    Toast.makeText(getApplicationContext(), "Vui lòng đồng ý điều khoản, chính sách!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

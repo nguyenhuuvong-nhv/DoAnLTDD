@@ -1,11 +1,13 @@
 package com.example.vongship_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,9 +31,18 @@ public class quenmatkhau extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.user_qmk);
         btnReset = (Button) findViewById(R.id.bt_qmk);
         progressBar = (ProgressBar) findViewById(R.id.progressBar3);
+        TextView txt_dangnhap= (TextView) findViewById(R.id.txt_dangnhap);
+
 
         auth = FirebaseAuth.getInstance();
 
+        txt_dangnhap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(quenmatkhau.this,dangnhap.class);
+                startActivity(intent);
+            }
+        });
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

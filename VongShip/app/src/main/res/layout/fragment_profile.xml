@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackGround"
-    tools:context=".Profile">
+    tools:context=".Fragment.ProfileFragment">
     <LinearLayout
         android:background="#FFFFFF"
         android:id="@+id/topPanel"
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp">
         <ImageView
-            android:background="@drawable/gift"
+            android:background="@drawable/ic_gift"
             android:layout_marginLeft="15dp"
             android:layout_gravity="center_vertical"
             android:layout_width="60dp"

@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,15 +13,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.vongship_android.Adapter.ImageAdapter;
+import com.example.vongship_android.Activity.MapsActivity;
+import com.example.vongship_android.R;
+
 import static com.example.vongship_android.R.id.location_click;
 
-public class home extends Fragment {
+public class HomeFragment extends Fragment {
     LinearLayout location;
     @SuppressLint("WrongViewCast")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.activity_home,container,false);
+        View root = inflater.inflate(R.layout.fragment_home,container,false);
         location = root.findViewById(location_click);
         ViewPager viewPager = root.findViewById(R.id.viewPager);
         ImageAdapter adapter = new ImageAdapter(getActivity());
@@ -29,7 +33,7 @@ public class home extends Fragment {
         envent();
         return root;
     }
-    public  void envent(){
+    public void envent(){
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

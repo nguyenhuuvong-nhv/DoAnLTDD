@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import com.example.vongship_android.Fragment.HomeFragment;
+import com.example.vongship_android.Fragment.NotificationFragment;
+import com.example.vongship_android.Fragment.ProfileFragment;
+import com.example.vongship_android.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user == null) {
                     // user auth state is changed - user is null
                     // launch login activity
-                    startActivity(new Intent(MainActivity.this, dangnhap.class));
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
                 }
             }
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new home()).commit();
+                    new HomeFragment()).commit();
         };
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch (menuItem.getItemId()){
                         case R.id.home:
-                            selectedFragment = new home();
+                            selectedFragment = new HomeFragment();
                             break;
                         case R.id.nofi:
-                            selectedFragment = new Notification();
+                            selectedFragment = new NotificationFragment();
                             break;
                         case R.id.profile:
-                            selectedFragment = new Profile();
+                            selectedFragment = new ProfileFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.Menulogout:
                 auth.signOut();
-                Intent intent = new Intent(MainActivity.this, dangnhap.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 break;
         }

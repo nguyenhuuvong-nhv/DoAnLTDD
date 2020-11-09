@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".dangnhap">
+    tools:context=".Activity.LoginActivity">
 
     <ImageView
         android:id="@+id/logoImg"
@@ -13,7 +13,7 @@
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/logo" />
+        android:background="@drawable/loshipbranch" />
 
     <TextView
         android:id="@+id/title"
@@ -76,7 +76,7 @@
         android:layout_below="@id/inputlayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:background="@drawable/buttondangnhap"
+        android:background="@drawable/button_red"
         android:text="Đăng nhập"
         android:textAllCaps="true"
         android:textColor="#ffff"
@@ -97,7 +97,7 @@
             android:layout_height="45dp"
             android:layout_marginRight="7dp"
             android:layout_weight="1"
-            android:background="@drawable/buttongmail"
+            android:background="@drawable/button_green"
             android:text="Gmail"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -109,7 +109,7 @@
             android:layout_height="45dp"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
-            android:background="@drawable/buttonfacebook"
+            android:background="@drawable/button_cyan"
             android:text="Facebook"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
@@ -156,6 +156,8 @@
 
     <ProgressBar
         android:id="@+id/progressBar2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.vongship_android.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

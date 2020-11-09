@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +13,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vongship_android.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class dangnhap extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private TextView tvgoidangki;
     private TextView tvgoiquenmatkhau;
 
@@ -33,10 +34,10 @@ public class dangnhap extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(dangnhap.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
-        setContentView(R.layout.activity_dangnhap);
+        setContentView(R.layout.activity_login);
 
         btnLogin = (Button) findViewById(R.id.bt_dangnhap);
         tvgoidangki = (TextView)  findViewById(R.id.dangki);
@@ -45,28 +46,28 @@ public class dangnhap extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.user_Login);
         inputPassword = (EditText) findViewById(R.id.pass_Login);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
-
+        progressBar.setVisibility(View.INVISIBLE);
         auth = FirebaseAuth.getInstance();
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangnhap.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
         tvgoidangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangnhap.this, dangki.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
         tvgoiquenmatkhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangnhap.this, quenmatkhau.class);
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordsActivity.class);
                 startActivity(intent);
             }
         });
@@ -91,7 +92,7 @@ public class dangnhap extends AppCompatActivity {
 
                 //authenticate user
                 auth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(dangnhap.this, new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 // If sign in fails, display a message to the user. If sign in succeeds
@@ -103,11 +104,11 @@ public class dangnhap extends AppCompatActivity {
                                     if (password.length() < 6) {
                                         inputPassword.setError("Mật khẩu quá ngắn, trên 6 kí tự!");
                                     } else {
-                                        Toast.makeText(dangnhap.this,"\n" +
+                                        Toast.makeText(LoginActivity.this,"\n" +
                                                 "Xác thực không thành công, hãy kiểm tra email và mật khẩu của bạn hoặc đăng ký", Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(dangnhap.this, MainActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

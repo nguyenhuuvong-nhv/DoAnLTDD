@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vongship_android.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class quenmatkhau extends AppCompatActivity {
+public class ForgotPasswordsActivity extends AppCompatActivity {
 
     private EditText inputEmail;
     private Button btnReset;
@@ -26,7 +27,7 @@ public class quenmatkhau extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quenmatkhau);
+        setContentView(R.layout.activity_forgotpasswords);
 
         inputEmail = (EditText) findViewById(R.id.user_qmk);
         btnReset = (Button) findViewById(R.id.bt_qmk);
@@ -39,7 +40,7 @@ public class quenmatkhau extends AppCompatActivity {
         txt_dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(quenmatkhau.this,dangnhap.class);
+                Intent intent = new Intent(ForgotPasswordsActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,9 +61,9 @@ public class quenmatkhau extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(quenmatkhau.this, "Chúng tôi sẽ gửi Email cho bạn để đặt lại mật khẩu!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ForgotPasswordsActivity.this, "Chúng tôi sẽ gửi Email cho bạn để đặt lại mật khẩu!", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(quenmatkhau.this, "Gửi Email thất bại!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ForgotPasswordsActivity.this, "Gửi Email thất bại!", Toast.LENGTH_SHORT).show();
                                 }
 
                                 progressBar.setVisibility(View.GONE);

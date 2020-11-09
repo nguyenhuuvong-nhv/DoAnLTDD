@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,7 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Notification extends Fragment {
+import com.example.vongship_android.R;
+
+public class NotificationFragment extends Fragment {
     ListView listView;
     String mTitle[] = {"Chiều rồi!Trà sữa nào bạn ơi! Đồng giá 17K, freeship nữa nà",
             "Sáng nay ăn gì, cứ lên Loship, đặt ngay thôi nào, đồng giá 10K lại free ship tận nhà",
@@ -29,9 +31,9 @@ public class Notification extends Fragment {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.activity_notifications,container,false);
+        View root = inflater.inflate(R.layout.fragment_notifications,container,false);
         listView = root.findViewById(R.id.ListView);
-        Notification.MyAdapter adapter = new Notification.MyAdapter( getActivity(), mTitle,mDescription,images);
+        NotificationFragment.MyAdapter adapter = new NotificationFragment.MyAdapter( getActivity(), mTitle,mDescription,images);
         listView.setAdapter(adapter);
         return root;
         };

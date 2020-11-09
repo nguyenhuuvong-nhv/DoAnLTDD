@@ -1,4 +1,4 @@
-package com.example.vongship_android;
+package com.example.vongship_android.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class Splash extends AppCompatActivity {
+import com.example.vongship_android.R;
+
+public class SplashActivity extends AppCompatActivity {
 
     private static final long DELAY_TIME = 3000;
 
@@ -19,7 +21,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                Intent intent = new Intent(Splash.this, dangnhap.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         },DELAY_TIME);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".dangki">
+    tools:context=".dangnhap">
 
     <ImageView
         android:id="@+id/image"
@@ -33,73 +33,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="serif"
         android:text="Đăng kí"
         android:textColor="#000000"
-        android:textSize="28sp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/user_Signup"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_below="@id/signTv"
         android:layout_centerHorizontal="true"
-        android:hint="Email"
-        android:inputType="text|textEmailAddress"
-        android:textColorHint="#64BCF6"
+        android:hint="Nhập Email "
+        android:inputType="text"
+
         android:textStyle="italic" />
 
-    <EditText
-        android:id="@+id/pass_Signup"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputlayout1"
         android:layout_below="@id/user_Signup"
-        android:layout_centerHorizontal="true"
-        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
-        android:hint="Mật khẩu"
-        android:inputType="textPassword"
-        android:textColorHint="#64BCF6"
-        android:textStyle="italic" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_Signup"
+            android:layout_gravity="center"
+            android:textColorHint="#64BCF6"
+            android:textStyle="italic"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:hint="Nhập mật khẩu"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/confirmTv"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/pass_Signup"
-        android:layout_centerHorizontal="true"
-        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
-        android:hint="Nhập lại mật khẩu"
-        android:inputType="textPassword"
-        android:textColorHint="#64BCF6"
-        android:textStyle="italic" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputlayout2"
+        android:layout_below="@id/inputlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmTv"
+            android:layout_gravity="center"
+            android:textColorHint="#64BCF6"
+            android:textStyle="italic"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:hint="Nhập lại mật khẩu"
+            android:inputType="textPassword"  />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/cp_policy"
-        android:layout_width="300dp"
+        android:id="@+id/policy"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/confirmTv"
+        android:layout_below="@id/inputlayout2"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="Tôi đồng ý với điều khoản"
+        android:text="Tôi đồng ý với điều khoản sử dụng"
         android:textColor="#040404"
-        android:textSize="18sp" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/bt_dangki"
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/cp_policy"
+        android:layout_height="60dp"
+        android:layout_below="@id/policy"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/buttondangnhap"
         android:text="Đăng kí"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:textColor="#ffff"
-        android:textSize="22sp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <LinearLayout

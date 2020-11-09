@@ -37,7 +37,7 @@ public class dangki extends AppCompatActivity {
         inputPassword = (EditText) findViewById(R.id.pass_Signup);
         confirmPass =(EditText) findViewById(R.id.confirmTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        cp_policy = (CheckBox) findViewById(R.id.cp_policy);
+        cp_policy = (CheckBox) findViewById(R.id.policy);
         auth = FirebaseAuth.getInstance();
 
 

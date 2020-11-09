@@ -47,32 +47,33 @@
         android:layout_height="50dp"
         android:layout_below="@+id/signinTv"
         android:layout_centerHorizontal="true"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:hint="Email"
         android:inputType="text"
         android:textColorHint="#8D8E8F"
         android:textStyle="italic" />
 
-    <EditText
-        android:id="@+id/pass_Login"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/user_Login"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawableRight="@drawable/ic_baseline_remove_red_eye_24"
-        android:drawablePadding="10dp"
-        android:hint="Mật khẩu"
-        android:inputType="textPassword"
-        android:textColorHint="#8D8E8F"
-        android:textStyle="italic" />
-
+        app:passwordToggleEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass_Login"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:textColorHint="#8D8E8F"
+            android:textStyle="italic"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/bt_dangnhap"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_below="@id/pass_Login"
+        android:layout_below="@id/inputlayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:background="@drawable/buttondangnhap"
